@@ -15,6 +15,6 @@ const showFeedback = (status, code, element, refresh) => {
 
     // hvis statuskode er "ok" og refresh er true, refresh siden
     if (code === 'ok' && refresh) {
-        window.location = '/home';
+        window.location = '/user';
     };
 }
