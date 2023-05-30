@@ -23,3 +23,7 @@ nav ul li {
 .rightNav {
     float: inline-end;
 }
+
+.hidden {
+    display: none;
+}

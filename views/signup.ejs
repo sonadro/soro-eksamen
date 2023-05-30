@@ -1,0 +1,21 @@
+<%- include('partials/header') %>
+
+    <!-- css -->
+    <link rel="stylesheet" href="/css/signin.css">
+    <link rel="stylesheet" href="/css/statusCodes.css">
+
+    <form class="lag-bruker">
+        <h2>Ny bruker</h2>
+        <input type="text" id="epost" placeholder="Epost"><br>
+        <input type="text" id="brukernavn" placeholder="Brukernavn"><br>
+        <input type="password" id="passord" placeholder="Passord"><br>
+        <input type="password" id="gjentaPassord" placeholder="Gjenta passord">
+        <a href="/sign-in">Har du en bruker?</a>
+        <p class="feedback hidden">feedback</p>
+        <button type="submit">Logg inn</button>
+    </form>
+
+    <!-- scripts -->
+    <script src="/js/feedback.js" defer></script>
+
+<%- include('partials/footer') %>

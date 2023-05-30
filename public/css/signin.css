@@ -1,0 +1,35 @@
+form {
+    margin: 50px;
+    width: 304px;
+    height: 205px;
+}
+
+input {
+    border: 3px solid black;
+    border-radius: 6px;
+
+    padding: 5px;
+    margin-bottom: 20px;
+
+    font-weight: bold;
+    width: 34ch;
+}
+
+button {
+    border: 3px solid black;
+    border-radius: 6px;
+    
+    background-color: white;
+    padding: 5px;
+
+    position: relative;
+    float: inline-end;
+
+    top: 25px;
+}
+
+form a {
+    text-decoration: none;
+    font-weight: bold;
+    color: black;
+}
