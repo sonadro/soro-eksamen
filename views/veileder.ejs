@@ -9,7 +9,7 @@
             <h2>Hvordan opprette en Linux-bruker med sudo-rettigheter og ssh-nøkkel</h2>
 
             <label for="img_1">Først må du gi deg selv sudo-rettigheter</label><br>
-            <img name="img_1" src="/img/veileder/veileder_1.png" alt="Brukk kommandoen 'sudo su', og skriv inn passordet ditt."><br><br>
+            <img name="img_1" src="/img/veileder/veileder_1.png" alt=""><br><br>
 
             <label for="img_2">Bruk kommandoen 'adduser' for å lage en ny bruker, og fyll ut passord og informasjon:</label><br>
             <img name="img_2" src="/img/veileder/veileder_2.png" alt="">
@@ -23,10 +23,31 @@
             <img name="img_4" src="/img/veileder/veileder_4.png" alt=""><br><br>
 
             <label for="img_5">Dette er slik tekstredigeringsprogrammet ser ut, da er det bare å høyreklikke for å lime inn ssh-nøkkelen.</label><br>
-            <img name="img_5" src="/img/veileder/veileder_5.png" alt="Bilde av GNU nano, med tekst 'lim in ssh-nøkkel her'"><br><br>
+            <img name="img_5" src="/img/veileder/veileder_5.png" alt=""><br><br>
         </div>
         <div class="nodeGuide">
             <h2>Hvordan hoste en Node-applikasjon på en Linux-server</h2>
+
+            <label for="img_6">Det første du må gjøre for å kjøre en Node-applikasjon er å installere Node. Dette kan gjøres med kommandoen 'apt install nodejs'. For å bruke denne kommandoen, må man også ha sudo-rettigheter. Det kan man få ved å bruke kommandoen 'sudo su', og skrive passordet til brukeren.</label><br>
+            <img name="img_6" src="/img/veileder/node_1.png" alt=""><br><br>
+
+            <label for="img_7">Når node er installert, så må du installere Node Package Manager hvis det brukes i prosjektet. Det kan gjøres med kommandoen 'apt install npm'.</label><br>
+            <img name="img_7" src="/img/veileder/node_2.png" alt=""><br><br>
+
+            <label for="img_8">Nå kan du lage en mappe som heter 'www' i '/var'-mappen. Det er der nettsiden kommer til å bli lagret.</label><br>
+            <img name="img_8" src="/img/veileder/node_3.png" alt=""><br><br>
+
+            <label for="img_9">Når du er i www-mappen, så kan du bruke 'git clone' for å hente et repository fra GitHub. Hvis git ikke er installert på maskinen, kan det installeres med kommandoen 'apt install git'.</label><br>
+            <img name="img_9" src="/img/veileder/node_4.png" alt=""><br><br>
+
+            <label for="img_10">Når repositoriet er kopiert, kjør kommandoen 'npm i' for å installere alle Node-pakkene som brukes i prosjektet.</label><br>
+            <img name="img_10" src="/img/veileder/node_5.png" alt=""><br><br>
+
+            <label for="img_11">For å kjøre applikasjonen så kan du bruke kommandoen 'node server.js' der server.js er navnet på hovedfilen til applikasjonen.</label><br>
+            <img name="img_11" src="/img/veileder/node_6.png" alt=""><br><br>
+
+            <label for="img_12">For å hente nye endringer til prosjektet, så kan du bruke kommandoen 'git pull'. Hvis du ikke kan skrive i terminalen fordi Node-prossessen allerede kjører, så kan du stoppe prosessen ved å trykke CTRL + C.</label><br>
+            <img name="img_12" src="/img/veileder/node_7.png" alt=""><br><br>
         </div>
     </div>
 
