@@ -29,7 +29,7 @@ module.exports.user_get = (req, res) => {
         if (username !== res.locals.username) {
             res.redirect(`/user/${res.locals.username}`);
         } else {
-            res.render('user', { title: 'Username' });
+            res.render('user', { title: req.params.username });
         };
     } else {
         // bruker er ikke logget inn
