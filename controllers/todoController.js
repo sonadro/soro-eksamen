@@ -72,9 +72,16 @@ module.exports.todo_getUserTodos = async (req, res) => {
                 // bruker er logget inn, send tilbake todos
                 const todos = await Todo.findOne({ owner: decodedToken.id });
 
-                res.send({
-                    items: todos.items
-                });
+                if (!todos) {
+                    res.send({
+                        status: 'Du har ingen todos!'
+                    });
+                } else {
+                    res.send({
+                        status: 'Du har todos!',
+                        items: todos.items
+                    });
+                };
             };
         });
     } else {

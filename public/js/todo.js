@@ -33,16 +33,18 @@ const getUserTodos = async () => {
     });
     
     const result = await(res.json());
-    
-    result.items.forEach(item => {
-        user_todos.push(item);
-        
-        const template = `
-            <p class="item">${item}</p>
-        `;
 
-        todoContainer.innerHTML += template;
-    }); 
+    if (result.status === 'Du har todos!') {   
+        result.items.forEach(item => {
+            user_todos.push(item);
+            
+            const template = `
+                <p class="item">${item}</p>
+            `;
+    
+            todoContainer.innerHTML += template;
+        });
+    };
 };
 
 newTodoForm.addEventListener('submit', e => {
