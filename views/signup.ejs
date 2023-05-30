@@ -5,11 +5,19 @@
     <link rel="stylesheet" href="/css/statusCodes.css">
 
     <form class="lag-bruker">
-        <h2>Ny bruker</h2>
-        <input type="text" id="epost" placeholder="Epost"><br>
-        <input type="text" id="brukernavn" placeholder="Brukernavn"><br>
-        <input type="password" id="passord" placeholder="Passord"><br>
-        <input type="password" id="gjentaPassord" placeholder="Gjenta passord">
+        <h1>Ny bruker</h1>
+        <label for="epost" class="hidden">E-post</label>
+        <input type="text" name="epost" id="epost" placeholder="Epost"><br>
+
+        <label for="brukernavn" class="hidden">Brukernavn</label>
+        <input type="text" name="brukernavn" id="brukernavn" placeholder="Brukernavn"><br>
+
+        <label for="passord" class="hidden">Passord</label>
+        <input type="password" name="passord" id="passord" placeholder="Passord"><br>
+
+        <label for="gjentaPassord" class="hidden">Gjenta passord</label>
+        <input type="password" name="gjentaPassord" id="gjentaPassord" placeholder="Gjenta passord">
+
         <a href="/sign-in">Har du en bruker?</a>
         <p class="feedback hidden">feedback</p>
         <button type="submit">Logg inn</button>

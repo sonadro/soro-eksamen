@@ -5,9 +5,11 @@
     <link rel="stylesheet" href="/css/statusCodes.css">
 
     <form class="innlogging">
-        <h2>Innlogging</h2>
-        <input type="text" id="epost" placeholder="Epost"><br>
-        <input type="password" id="passord" placeholder="Passord"><br>
+        <h1>Innlogging</h1>
+        <label for="epost" class="hidden">E-post</label>
+        <input type="text" name="epost" id="epost" placeholder="Epost"><br>
+        <label for="passord" class="hidden">Passord</label>
+        <input type="password" name="passord" id="passord" placeholder="Passord"><br>
         <a href="/sign-up">Ny bruker?</a>
         <p class="feedback hidden">Feedback</p>
         <button type="submit">Logg inn</button>
