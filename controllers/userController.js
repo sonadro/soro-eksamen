@@ -94,3 +94,45 @@ module.exports.user_signup = async (req, res) => {
         };
     };
 };
+
+module.exports.user_signin = async (req, res) => {
+    const user = req.body.user;
+
+    const dbUser = await User.findOne({ epost: user.epost });
+
+    if (!dbUser) {
+        res.send({
+            status: `Kunne ikke finne en bruker med eposten '${user.epost}'`,
+            code: 'userErr'
+        });
+    } else {
+        // sjekk om passord matcher
+        const auth = await bcrypt.compare(user.passord, dbUser.passord);
+
+        if (auth) {
+            // passord matcher, gi jwt-cookie
+            const token = createToken(dbUser._id.toString());
+
+            res.cookie('jwt', token, {
+                sameSite: 'strict',
+                httpOnly: true,
+                maxAge: maxAge * 1000
+            });
+
+            res.send({
+                status: `Logget inn som ${dbUser.epost}!'`,
+                code: 'ok'
+            });
+        } else {
+            res.send({
+                status: 'Feil passord',
+                code: 'userErr'
+            });
+        };
+    };
+};
+
+module.exports.user_signout = (req, res) => {
+    res.cookie('jwt', '', { maxAge: 1 });
+    res.redirect('/');
+};
