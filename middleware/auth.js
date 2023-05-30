@@ -27,10 +27,20 @@ const loggedInCheck = (req, res, next) => {
                     // user exists, log them in
                     res.locals.loggedInUser = user.username;
                     res.locals.loggedIn = true;
+                    res.locals.username = user.brukernavn;
+
+                    if (user.admin) {
+                        // brukeren er admin
+                        res.locals.isAdmin = true;
+                    } else {
+                        // brukeren er ikke admin
+                        res.locals.isAdmin = false;
+                    }
                 } else {
                     // user doesn't exist, remove cookie
                     res.cookie('jwt', '', { maxAge: 1 });
                     res.locals.loggedIn = false;
+                    res.locals.isAdmin = false;
                 };
                 next();
             };
@@ -38,6 +48,7 @@ const loggedInCheck = (req, res, next) => {
     } else {
         // user has no token, they aren't signed in
         res.locals.loggedIn = false;
+        res.locals.isAdmin = false;
         next();
     };
 };

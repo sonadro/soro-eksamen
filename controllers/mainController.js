@@ -13,6 +13,16 @@ module.exports.signup_get = (req, res) => {
 
 module.exports.user_get = (req, res) => {
     const username = req.params.username;
-    console.log(username);
-    res.render('user', { title: 'Username' });
+
+    if (res.locals.loggedIn) {
+        // bruker er logget inn
+        if (username !== res.locals.username) {
+            res.redirect(`/user/${res.locals.username}`);
+        } else {
+            res.render('user', { title: 'Username' });
+        };
+    } else {
+        // bruker er ikke logget inn
+        res.redirect('/sign-in');
+    };
 };

@@ -68,7 +68,8 @@ module.exports.user_signup = async (req, res) => {
                             const uploadUser = {
                                 epost: user.epost,
                                 brukernavn: user.brukernavn,
-                                passord: await bcrypt.hash(user.passord, salt)
+                                passord: await bcrypt.hash(user.passord, salt),
+                                admin: false
                             };
 
                             // lagre brukeren
