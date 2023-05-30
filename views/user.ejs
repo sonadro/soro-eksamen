@@ -9,17 +9,14 @@
             <h1>The shit I am going to do today</h1>
             <button class="rightArrow"><img src="/img/arrow-right-solid.png" alt="arrow right"></button>
         </div>
-        <div class="todo-list">
-            <p class="item">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-            <p class="item">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-            <p class="item">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-            <p class="item">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-            <p class="item">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-        </div>
+        <div class="todo-list"></div>
         <form class="inputContainer">
-            <input type="text" class="addItem" placeholder="Type new shit here...">
+            <input type="text" id="newTodo" placeholder="Type new shit here...">
             <button class="addButton" type="submit"><img src="/img/check-solid-white.png" alt="checkmark"></button>
         </form>
     </div>
+
+    <!-- scripts -->
+    <script src="/js/todo.js" defer></script>
 
 <%- include('partials/footer') %>
