@@ -1,9 +1,20 @@
+@font-face {
+    font-family: 'Lato-Regular';
+    src: url('/fonts/Lato-Regular.tff');
+}
+
+body {
+    font-family: 'Lato-Regular';
+}
+
 nav {
     background-color: #000000;
     position: fixed;
     top: 0px;
     left: 0px;
     width: 100%;
+
+    z-index: 100;
 }
 
 nav * {

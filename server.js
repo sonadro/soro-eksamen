@@ -6,7 +6,7 @@ const cookieParser = require('cookie-parser');
 // environment variables
 const { dbUser, dbPass } = require('./config.json');
 const PORT = 80;
-const DB_URI = `mongodb+srv://${dbUser}:${dbPass}@cluster0.vnz2jh4.mongodb.net/testDatabase`;
+const DB_URI = `mongodb+srv://${dbUser}:${dbPass}@cluster0.vnz2jh4.mongodb.net/getShitDoneDatabase`;
 
 // routes
 const MAIN_ROUTES = require('./routes/mainRoutes');

@@ -1,0 +1,104 @@
+body {
+    overflow-x: hidden;
+}
+
+.leftArrow {
+    position: absolute;
+    top: 70px;
+    left: 15px;
+
+    background-color: white;
+    border: none;
+}
+
+.leftArrow img {
+    width: 30px;
+}
+
+h1 {
+    position: absolute;
+    width: 100%;
+
+    z-index: -1;
+
+    text-align: center;
+}
+
+.rightArrow {
+    position: absolute;
+    top: 70px;
+    right: 15px;
+
+    background-color: white;
+    border: none;
+}
+
+.rightArrow img {
+    width: 30px;
+}
+
+.todo-list {
+    position: relative;
+    top: 75px;
+
+    margin-left: auto;
+    margin-right: auto;
+
+    width: 650px;
+}
+
+.todo-list p {
+    background-color: black;
+    color: white;
+    border-radius: 6px;
+    padding: 7px;
+
+    font-size: 18px;
+}
+
+.inputContainer {
+    position: relative;
+    margin-right: auto;
+    margin-left: auto;
+
+    width: 700px;
+    height: 30px;
+    top: 75px;
+}
+
+.addItem {
+    position: absolute;
+    width: 670px;
+    background-color: black;
+    color: white;
+
+    border: none;
+    border-radius: 6px;
+    padding: 5px;
+    padding-right: 0px;
+    padding-left: 30px;
+    font-size: 18px;
+}
+
+.addButton {
+    position: absolute;
+
+    right: 0px;
+    height: 32px;
+
+    background-color: black;
+    color: white;
+
+    border: none;
+    border-radius: 6px;
+
+    cursor: pointer;
+}
+
+.addButton img {
+    height: 100%;
+}
+
+button {
+    cursor: pointer;
+}
