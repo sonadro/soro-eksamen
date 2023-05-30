@@ -6,7 +6,11 @@
     <div class="pageContainer">
         <h1>The ultimate to-do-list app</h1>
         <h2>Get shit done today!</h2>
-        <p><a href="/sign-in">Login</a> to start using the app</p>
+        <% if (!locals.loggedIn) { %>
+            <p><a href="/sign-in">Login</a> to start using the app</p>
+        <% } else { %>
+            <p>Go to your <a href="/user">home page</a> to start using the app</p>
+        <% }; %>
     </div>
 
 <%- include('partials/footer') %>
