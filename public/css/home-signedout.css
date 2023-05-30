@@ -27,6 +27,6 @@ h1 {
 }
 
 h2 {
-    font-family: 'Lato-Bold', fallback, sans-serif !important;
+    font-family: 'Lato-Bold', fallback, sans-serif;
     font-weight: bold;
 }
