@@ -53,5 +53,13 @@ const loggedInCheck = (req, res, next) => {
     };
 };
 
+const requireAdmin = async (req, res, next) => {
+    if (!res.locals.isAdmin) {
+        res.redirect('/');
+    } else {
+        next();
+    };
+};
+
 // export functions
-module.exports = { loggedInCheck };
+module.exports = { loggedInCheck, requireAdmin };

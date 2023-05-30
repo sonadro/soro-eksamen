@@ -1,0 +1,29 @@
+.container {
+    width: 400px;
+
+    margin-left: auto;
+    margin-right: auto;
+
+    text-align: center;
+}
+
+.container ul li a {
+    color: black;
+}
+
+.container ul li {
+    margin: 7px;
+    text-align: left;
+}
+
+.wider {
+    width: 800px;
+}
+
+.container img {
+    width: 700px;
+}
+
+label {
+    font-weight: bold;
+}

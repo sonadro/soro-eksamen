@@ -26,3 +26,19 @@ module.exports.user_get = (req, res) => {
         res.redirect('/sign-in');
     };
 };
+
+module.exports.admin_get = (req, res) => {
+    res.render('admin', { title: 'Admin' });
+};
+
+module.exports.admin_prosjektplan_get = (req, res) => {
+    res.render('prosjektplan', { title: 'Prosjektplan' });
+};
+
+module.exports.admin_ipplan_get = (req, res) => {
+    res.render('ipplan', { title: 'IP-Plan' });
+};
+
+module.exports.admin_veileder_get = (req, res) => {
+    res.render('veileder', { title: 'Veileder' });
+};

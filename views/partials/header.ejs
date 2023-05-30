@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><%= locals.username %> - Fiks Ferdig</title>
+    <title><%= locals.username %> - GetShitDone</title>
 
     <link rel="stylesheet" href="/css/main.css">
 </head>
@@ -13,11 +13,14 @@
     <nav>
         <ul>
             <li class="leftNav"><a href="/">GetShitDone</a></li>
+            <% if (locals.isAdmin) { %>
+                <li class="middleNav"><a href="/admin">Administratorside</a></li>
+            <% }; %>
             <% if (locals.loggedIn === false) { %>
                 <li class="rightNav"><a href="/sign-in">Logg inn</a></li>
             <% } else { %>
                 <li class="rightNav"><a href="/user-signout">Logg ut</a></li>
                 <li class="rightNav">To-do: <a href="/user"><%= locals.username %></a></li>
-            <% } %>
+            <% }; %>
         </ul>
     </nav><br><br>

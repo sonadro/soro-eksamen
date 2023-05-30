@@ -1,0 +1,33 @@
+<%- include('partials/header') %>
+
+    <!-- css -->
+    <link rel="stylesheet" href="/css/admin.css">
+
+    <div class="container wider">
+        <h1>Veileder</h1><br><br>
+        <div class="userGuide">
+            <h2>Hvordan opprette en Linux-bruker med sudo-rettigheter og ssh-nøkkel</h2>
+
+            <label for="img_1">Først må du gi deg selv sudo-rettigheter</label><br>
+            <img name="img_1" src="/img/veileder/veileder_1.png" alt="Brukk kommandoen 'sudo su', og skriv inn passordet ditt."><br><br>
+
+            <label for="img_2">Bruk kommandoen 'adduser' for å lage en ny bruker, og fyll ut passord og informasjon:</label><br>
+            <img name="img_2" src="/img/veileder/veileder_2.png" alt="">
+            <p>PS: Når du skriver inn passordet, vil du ikke kunne se hva du skriver, men passordet blir fortsatt skrevet inn!</p><br><br>
+
+            <label for="img_3">Åpne mappen til brukeren, med kommandoen 'cd /home/administrator' - administrator er brukernavnet du ga brukeren.</label><br>
+            <img name="img_3" src="/img/veileder/veileder_3.png" alt="">
+            <p>Når du er i mappen til brukeren, så må du lage en mappe som heter '.ssh', hvis den ikke allerede finnes. Sjekk at mappen eksisterer med kommandoen 'ls -a', og lag mappen med kommandoen 'mkdir .ssh', hvis mappen ikke eksisterer.</p><br><br>
+
+            <label for="img_4">Når du har laget/sjekket at du har en .ssh mappe, så kan du bruke kommandoen 'nano .ssh/authorized_keys'. Da åpnes tekstredigeringsprogrammet nano, og du kan lime inn ssh-nøkkelen til brukeren.</label><br>
+            <img name="img_4" src="/img/veileder/veileder_4.png" alt=""><br><br>
+
+            <label for="img_5">Dette er slik tekstredigeringsprogrammet ser ut, da er det bare å høyreklikke for å lime inn ssh-nøkkelen.</label><br>
+            <img name="img_5" src="/img/veileder/veileder_5.png" alt="Bilde av GNU nano, med tekst 'lim in ssh-nøkkel her'"><br><br>
+        </div>
+        <div class="nodeGuide">
+            <h2>Hvordan hoste en Node-applikasjon på en Linux-server</h2>
+        </div>
+    </div>
+
+<%- include('partials/footer') %>
