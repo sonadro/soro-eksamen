@@ -59,9 +59,8 @@ h1 {
     background-color: black;
     color: white;
     border-radius: 6px;
-    /* padding: 7px; */
+    padding: 7px;
 
-    /* display: block; */
     width: 636px;
     height: 22px;
 
@@ -72,7 +71,7 @@ h1 {
     display: flex;
     flex-flow: row nowrap;
 
-    margin: 10px;
+    margin: 30px;
     height: 25px;
 }
 
@@ -120,7 +119,8 @@ h1 {
 }
 
 .imgButton {
-    height: 25px;
+    height: 36px;
+    width: 36px;
     background-color: black;
     border: none;
 
@@ -129,7 +129,9 @@ h1 {
 
 .updateButton {
     width: 75px;
-    height: 25px;
+    height: 36px;
+
+    font-size: 18px;
 
     position: relative;
     top: 1px;

@@ -40,7 +40,7 @@ const getUserTodos = async () => {
             user_todos.push(item);
             
             const template = `
-                <div class="todo">
+                <div class="todo" id="todo${todo_id}">
                     <input id="item${todo_id}" class="item">
                     <div class="rightButtons">
                         <button onclick="updateTodos();" class="updateButton" id="button${todo_id}">Update</button>
@@ -167,5 +167,11 @@ const markTodo = id => {
 };
 
 const deleteTodo = id => {
-    console.log('delete', id);
+    const todo = document.querySelector(`#todo${id}`);
+
+    todo.outerHTML = '';
+
+    user_todos.splice(id, 1);
+
+    uploadTodos(user_todos);
 };
