@@ -40,8 +40,12 @@ const getUserTodos = async () => {
             user_todos.push(item);
             
             const template = `
-                <input id="${todo_id}" class="item">
+                <div class="todo">
+                    <input id="${todo_id}" class="item">
+                </div>
             `;
+
+            todo_id++;
     
             todoContainer.innerHTML += template;
         });
@@ -49,6 +53,8 @@ const getUserTodos = async () => {
 
     // oppdater input-verdiene
     const allInputs = Array.from(document.querySelectorAll('.item'));
+
+    console.log(allInputs);
 
     for (let i = 0; i < allInputs.length; i++) {
         const currentInput = allInputs[i];
@@ -66,8 +72,12 @@ newTodoForm.addEventListener('submit', e => {
     user_todos.push(todo);
 
     const template = `
-    <input id="${todo_id}" class="item">
+        <div class="todo">
+            <input id="${todo_id}" class="item">
+        </div>
     `;
+
+    todo_id++;
 
     todoContainer.innerHTML += template;
 

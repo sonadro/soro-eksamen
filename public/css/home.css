@@ -47,14 +47,20 @@ h1 {
     width: 650px;
 }
 
-.todo-list .item {
+.todo-list .todo {
+    width: 650px;
+}
+
+.todo .item {
     background-color: black;
     color: white;
     border-radius: 6px;
     padding: 7px;
+    margin: 10px;
 
     display: block;
     width: 636px;
+    height: 20px;
 
     font-size: 18px;
 }
@@ -100,8 +106,4 @@ h1 {
 
 .addButton img {
     height: 100%;
-}
-
-button {
-    cursor: pointer;
 }
