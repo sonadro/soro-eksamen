@@ -13,6 +13,9 @@ const userSchema = new mongoose.Schema({
     },
     admin: {
         type: Boolean
+    },
+    owner: {
+        type: Boolean
     }
 });
 

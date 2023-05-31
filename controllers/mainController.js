@@ -52,3 +52,7 @@ module.exports.admin_ipplan_get = (req, res) => {
 module.exports.admin_veileder_get = (req, res) => {
     res.render('veileder', { title: 'Veileder' });
 };
+
+module.exports.owner_get = (req, res) => {
+    res.render('owner', { title: 'Eierside'});
+};

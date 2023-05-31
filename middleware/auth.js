@@ -15,6 +15,10 @@ const loggedInCheck = (req, res, next) => {
             if (err) {
                 // invalid token, user isn't signed in
                 console.error(err);
+                
+                res.locals.loggedIn = false;
+                res.locals.isAdmin = false;
+                res.locals.isOwner = false;
 
                 // remove the invalid cookie
                 res.cookie('jwt', '', { maxAge: 1 });
@@ -35,12 +39,21 @@ const loggedInCheck = (req, res, next) => {
                     } else {
                         // brukeren er ikke admin
                         res.locals.isAdmin = false;
-                    }
+                    };
+
+                    if (user.owner) {
+                        // brukeren er eier
+                        res.locals.isOwner = true;
+                    } else {
+                        // brukeren er ikke eier
+                        res.locals.isOwner = false;
+                    };
                 } else {
                     // user doesn't exist, remove cookie
                     res.cookie('jwt', '', { maxAge: 1 });
                     res.locals.loggedIn = false;
                     res.locals.isAdmin = false;
+                    res.locals.isOwner = false;
                 };
                 next();
             };
@@ -49,6 +62,7 @@ const loggedInCheck = (req, res, next) => {
         // user has no token, they aren't signed in
         res.locals.loggedIn = false;
         res.locals.isAdmin = false;
+        res.locals.isOwner = false;
         next();
     };
 };
@@ -61,5 +75,13 @@ const requireAdmin = async (req, res, next) => {
     };
 };
 
+const requireOwner = async (req, res, next) => {
+    if (!res.locals.isOwner) {
+        res.redirect('/');
+    } else {
+        next();
+    };
+};
+
 // export functions
-module.exports = { loggedInCheck, requireAdmin };
+module.exports = { loggedInCheck, requireAdmin, requireOwner };

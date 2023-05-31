@@ -69,7 +69,8 @@ module.exports.user_signup = async (req, res) => {
                                 epost: user.epost,
                                 brukernavn: user.brukernavn,
                                 passord: await bcrypt.hash(user.passord, salt),
-                                admin: false
+                                admin: false,
+                                owner: false
                             };
 
                             // lagre brukeren
@@ -136,4 +137,41 @@ module.exports.user_signin = async (req, res) => {
 module.exports.user_signout = (req, res) => {
     res.cookie('jwt', '', { maxAge: 1 });
     res.redirect('/');
+};
+
+module.exports.users_get = async (req, res) => {
+    const allUsers = await User.find({});
+    res.send(allUsers);
+};
+
+module.exports.users_toggleadmin = async (req, res) => {
+    const user_id = req.body.user_id;
+
+    const dbUser = await User.findOne({ _id: user_id });
+
+    if (dbUser.admin === true) {
+        const updatedUser = {
+            epost: dbUser.epost,
+            brukernavn: dbUser.brukernavn,
+            passord: dbUser.passord,
+            admin: false,
+            owner: false
+        };
+
+        await dbUser.updateOne(updatedUser);
+    } else if (dbUser.admin === false) {
+        const updatedUser = {
+            epost: dbUser.epost,
+            brukernavn: dbUser.brukernavn,
+            passord: dbUser.passord,
+            admin: true,
+            owner: false
+        };
+
+        await dbUser.updateOne(updatedUser);
+    };
+
+    res.send({
+        status: `Bruker oppdatert!`
+    });
 };

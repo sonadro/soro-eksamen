@@ -10,6 +10,9 @@
                 <li><a href="/admin/prosjektplan">Prosjektplan</a></li>
                 <li><a href="/admin/ip-plan">IP-Plan, nettverksdiagram</a></li>
                 <li><a href="/admin/veileder">Veileder</a></li>
+                <% if (locals.isOwner) { %>
+                    <li><a href="/eier">Eierside</a></li>
+                <% }; %>
             </ul>
         </div>
     </div>

@@ -1,7 +1,7 @@
 // imports
 const { Router } = require('express');
 const mainController = require('../controllers/mainController');
-const { loggedInCheck, requireAdmin } = require('../middleware/auth');
+const { loggedInCheck, requireAdmin, requireOwner } = require('../middleware/auth');
 
 const router = Router();
 
@@ -20,5 +20,8 @@ router.get('/admin', requireAdmin, mainController.admin_get);
 router.get('/admin/prosjektplan', requireAdmin, mainController.admin_prosjektplan_get);
 router.get('/admin/ip-plan', requireAdmin, mainController.admin_ipplan_get);
 router.get('/admin/veileder', requireAdmin, mainController.admin_veileder_get);
+
+// eierside
+router.get('/eier', requireOwner, mainController.owner_get);
 
 module.exports = router;
