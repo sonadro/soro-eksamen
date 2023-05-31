@@ -41,11 +41,11 @@ const getUserTodos = async () => {
             
             const template = `
                 <div class="todo">
-                    <input id="${todo_id}item" class="item">
+                    <input id="item${todo_id}" class="item">
                     <div class="rightButtons">
-                        <button onclick="updateTodos();" class="updateButton" id="${todo_id}button">Update</button>
-                        <button onclick="markTodo(${todo_id});" class="imgButton" id="${todo_id}check"><img src="/img/check-solid-white.png" alt="mark as done"></button>
-                        <button onclick="deleteTodo(${todo_id});" class="imgButton" id="${todo_id}delete"><img src="/img/trash-solid.png" alt="delete"></button>
+                        <button onclick="updateTodos();" class="updateButton" id="button${todo_id}">Update</button>
+                        <button onclick="markTodo(${todo_id});" class="imgButton" id="check${todo_id}"><img src="/img/check-solid-white.png" alt="mark as done"></button>
+                        <button onclick="deleteTodo(${todo_id});" class="imgButton" id="delete${todo_id}"><img src="/img/trash-solid.png" alt="delete"></button>
                     </div>
                 </div>
             `;
@@ -65,6 +65,25 @@ const getUserTodos = async () => {
 
         currentInput.value = currentValue;
     };
+
+    // oppdater finished styles
+    for (let i = 0; i < user_todos.length; i++) {
+        const currentTodo = user_todos[i];
+
+        // hvis todo er markert som fullført
+        if (currentTodo.finished) {
+            // finn inputfeltet, og bildet i check-knappen
+            const currentField = document.querySelector(`#item${i}`);
+            const button = document.querySelector(`#check${i}`);
+            const img = button.querySelector('img');
+        
+            // gi inputfeltet finished-styles
+            currentField.classList.add('finished');
+
+            // endre bilder til X, i stedet for check
+            img.src = '/img/xmark-solid.png';
+        };
+    };
 };
 
 newTodoForm.addEventListener('submit', e => {
@@ -79,12 +98,12 @@ newTodoForm.addEventListener('submit', e => {
 
     const template = `
         <div class="todo">
-            <input id="${todo_id}item" class="item">
-            <ul class="rightButtons">
-                <li><button id="${todo_id}button">Update</button></li>
-                <li><button class="imgButton" id="${todo_id}check"><img src="/img/check-solid-white.png" alt="mark as done"></button></li>
-                <li><button class="imgButton" id="${todo_id}delete"><img src="/img/trash-solid.png" alt="delete"></button></li>
-            </ul>
+            <input id="item${todo_id}" class="item">
+            <div class="rightButtons">
+                <button onclick="updateTodos();" class="updateButton" id="button${todo_id}">Update</button>
+                <button onclick="markTodo(${todo_id});" class="imgButton" id="check${todo_id}"><img src="/img/check-solid-white.png" alt="mark as done"></button>
+                <button onclick="deleteTodo(${todo_id});" class="imgButton" id="delete${todo_id}"><img src="/img/trash-solid.png" alt="delete"></button>
+            </div>
         </div>
     `;
 
@@ -129,7 +148,22 @@ const updateTodos = () => {
 };
 
 const markTodo = id => {
-    console.log('mark', id);
+    const item = document.querySelector(`#item${id}`);
+    
+    const button = document.querySelector(`#check${id}`);
+    const img = button.querySelector('img');
+
+    item.classList.toggle('finished');
+
+    if (item.classList.contains('finished')) {
+        user_todos[id].finished = true;
+        img.src = '/img/xmark-solid.png';
+    } else {
+        user_todos[id].finished = false;
+        img.src = '/img/check-solid-white.png';
+    };
+
+    uploadTodos(user_todos);
 };
 
 const deleteTodo = id => {
