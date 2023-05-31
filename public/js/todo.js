@@ -59,11 +59,9 @@ const getUserTodos = async () => {
     // oppdater input-verdiene
     const allInputs = Array.from(document.querySelectorAll('.item'));
 
-    console.log(allInputs);
-
     for (let i = 0; i < allInputs.length; i++) {
         const currentInput = allInputs[i];
-        const currentValue = user_todos[i];
+        const currentValue = user_todos[i].value;
 
         currentInput.value = currentValue;
     };
@@ -74,7 +72,10 @@ newTodoForm.addEventListener('submit', e => {
 
     const todo = newTodoForm.newTodo.value;
 
-    user_todos.push(todo);
+    user_todos.push({
+        value: todo,
+        finished: false
+    });
 
     const template = `
         <div class="todo">
@@ -96,7 +97,7 @@ newTodoForm.addEventListener('submit', e => {
 
     for (let i = 0; i < allInputs.length; i++) {
         const currentInput = allInputs[i];
-        const currentValue = user_todos[i];
+        const currentValue = user_todos[i].value;
 
         currentInput.value = currentValue;
     };
@@ -118,7 +119,10 @@ const updateTodos = () => {
     const newTodoFields = Array.from(document.querySelectorAll('.item'));
 
     newTodoFields.forEach(field => {
-        new_todos.push(field.value);
+        new_todos.push({
+            value: field.value,
+            finished: false
+        });
     });
 
     uploadTodos(new_todos);
