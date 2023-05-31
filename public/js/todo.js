@@ -2,6 +2,8 @@
 const newTodoForm = document.querySelector('.inputContainer');
 const updateForm = document.querySelector('.todo-list');
 
+newTodoForm.newTodo.value = null;
+
 // bruker todo
 let user_todos = [];
 let todo_id = 0;
@@ -20,6 +22,7 @@ const uploadTodos = async (todos) => {
     const result = await(res.json());
     
     console.log(result);
+    location.reload();
 };
 
 const getUserTodos = async () => {

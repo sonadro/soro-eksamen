@@ -1,15 +1,15 @@
 <%- include('partials/header') %>
 
     <!-- css -->
-    <link rel="stylesheet" href="/css/home-signedout.css">
+    <link rel="stylesheet" href="/css/home.css">
 
     <div class="pageContainer">
         <h1>The ultimate to-do-list app</h1>
         <h2>Get shit done today!</h2>
         <% if (!locals.loggedIn) { %>
-            <p><a href="/sign-in">Login</a> to start using the app</p>
+            <a class="link" href="/sign-in">Login to start using the app</a>
         <% } else { %>
-            <p>Go to your <a href="/user">home page</a> to start using the app</p>
+            <a class="link" href="/user">Go to your home page to start using the app</a>
         <% }; %>
     </div>
 

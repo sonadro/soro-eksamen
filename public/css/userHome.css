@@ -1,0 +1,152 @@
+body {
+    overflow-x: hidden;
+}
+
+.leftArrow {
+    position: absolute;
+    top: 70px;
+    left: 15px;
+
+    background-color: white;
+    border: none;
+}
+
+.leftArrow img {
+    width: 30px;
+}
+
+h1 {
+    position: absolute;
+    width: 100%;
+
+    z-index: -1;
+
+    text-align: center;
+}
+
+.rightArrow {
+    position: absolute;
+    top: 70px;
+    right: 15px;
+
+    background-color: white;
+    border: none;
+}
+
+.rightArrow img {
+    width: 30px;
+}
+
+.todo-list {
+    justify-content: center;
+    position: relative;
+    top: 75px;
+
+    margin-left: auto;
+    margin-right: auto;
+
+    width: 800px;
+}
+
+.todo-list .todo {
+    width: 650px;
+
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.todo .item {
+    background-color: black;
+    color: white;
+    border-radius: 6px;
+    padding: 7px;
+
+    width: 636px;
+    height: 22px;
+
+    font-size: 18px;
+}
+
+.todo {
+    display: flex;
+    flex-flow: row nowrap;
+
+    margin: 30px;
+    height: 25px;
+}
+
+.rightButtons {
+    justify-content: flex-end;
+    display: flex;
+    flex-flow: row nowrap;
+}
+
+.inputContainer {
+    position: relative;
+    margin-right: auto;
+    margin-left: auto;
+
+    width: 700px;
+    height: 30px;
+    top: 75px;
+}
+
+#newTodo {
+    position: absolute;
+    width: 670px;
+    background-color: black;
+    color: white;
+
+    border: none;
+    border-radius: 6px;
+    padding: 5px;
+    padding-right: 0px;
+    padding-left: 30px;
+    font-size: 18px;
+}
+
+.addButton {
+    position: absolute;
+
+    right: 0px;
+    height: 32px;
+
+    background-color: black;
+    color: white;
+
+    border: none;
+    border-radius: 6px;
+}
+
+.imgButton {
+    height: 36px;
+    width: 36px;
+    background-color: black;
+    border: none;
+
+    margin: 1px;
+}
+
+.updateButton {
+    width: 75px;
+    height: 36px;
+
+    font-size: 18px;
+
+    position: relative;
+    top: 1px;
+
+    color: white;
+    background-color: black;
+
+    border: none;
+}
+
+button img {
+    height: 100%;
+}
+
+.finished {
+    text-decoration: line-through;
+    color: #aaa !important;
+}
