@@ -27,13 +27,9 @@ const uploadTodos = async (todos) => {
 
 const getUserTodos = async () => {
     const res = await fetch('/todo-getusertodos', {
-        method: 'POST',
         headers: {
             'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-            parcel: 'Gi med todos'
-        })
+        }
     });
     
     const result = await(res.json());

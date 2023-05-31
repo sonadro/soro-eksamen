@@ -154,8 +154,7 @@ module.exports.users_toggleadmin = async (req, res) => {
             epost: dbUser.epost,
             brukernavn: dbUser.brukernavn,
             passord: dbUser.passord,
-            admin: false,
-            owner: false
+            admin: false
         };
 
         await dbUser.updateOne(updatedUser);
@@ -164,8 +163,7 @@ module.exports.users_toggleadmin = async (req, res) => {
             epost: dbUser.epost,
             brukernavn: dbUser.brukernavn,
             passord: dbUser.passord,
-            admin: true,
-            owner: false
+            admin: true
         };
 
         await dbUser.updateOne(updatedUser);

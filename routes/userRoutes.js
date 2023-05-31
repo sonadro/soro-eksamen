@@ -8,7 +8,7 @@ const router = Router();
 router.post('/user-signup', userController.user_signup);
 router.post('/user-signin', userController.user_signin);
 router.get('/user-signout', userController.user_signout);
-router.post('/users-get', userController.users_get);
+router.get('/users-get', userController.users_get);
 router.post('/user-toggleadmin', userController.users_toggleadmin);
 
 // export router

@@ -2,13 +2,9 @@ const container = document.querySelector('.userContainer');
 
 const getUsers = async () => {
     const res = await fetch('/users-get', {
-        method: 'POST',
         headers: {
             'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-            parcel: 'Hent brukere'
-        })
+        }
     });
     
     const result = await(res.json());

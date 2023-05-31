@@ -6,7 +6,7 @@ const router = Router();
 
 // routes
 router.post('/todo-update', todoController.todo_update);
-router.post('/todo-getusertodos', todoController.todo_getUserTodos);
+router.get('/todo-getusertodos', todoController.todo_getUserTodos);
 
 // export router
 module.exports = router;
