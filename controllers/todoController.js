@@ -41,7 +41,7 @@ module.exports.todo_update = async (req, res) => {
                     });
                     
                     res.send({
-                        status: 'Todos er oppdattert',
+                        status: 'Todos er oppdatert',
                         code: 'ok'
                     });
                 };

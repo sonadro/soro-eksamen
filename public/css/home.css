@@ -47,11 +47,14 @@ h1 {
     width: 650px;
 }
 
-.todo-list p {
+.todo-list .item {
     background-color: black;
     color: white;
     border-radius: 6px;
     padding: 7px;
+
+    display: block;
+    width: 636px;
 
     font-size: 18px;
 }

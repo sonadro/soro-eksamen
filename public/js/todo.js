@@ -4,6 +4,7 @@ const todoContainer = document.querySelector('.todo-list');
 
 // bruker todo
 let user_todos = [];
+let todo_id = 0;
 
 const uploadTodos = async (todos) => {
     const res = await fetch('/todo-update', {
@@ -39,11 +40,21 @@ const getUserTodos = async () => {
             user_todos.push(item);
             
             const template = `
-                <p class="item">${item}</p>
+                <input id="${todo_id}" class="item">
             `;
     
             todoContainer.innerHTML += template;
         });
+    };
+
+    // oppdater input-verdiene
+    const allInputs = Array.from(document.querySelectorAll('.item'));
+
+    for (let i = 0; i < allInputs.length; i++) {
+        const currentInput = allInputs[i];
+        const currentValue = user_todos[i];
+
+        currentInput.value = currentValue;
     };
 };
 
@@ -55,10 +66,20 @@ newTodoForm.addEventListener('submit', e => {
     user_todos.push(todo);
 
     const template = `
-        <p class="item">${todo}</p>
+    <input id="${todo_id}" class="item">
     `;
 
     todoContainer.innerHTML += template;
+
+    // oppdater input-verdiene
+    const allInputs = Array.from(document.querySelectorAll('.item'));
+
+    for (let i = 0; i < allInputs.length; i++) {
+        const currentInput = allInputs[i];
+        const currentValue = user_todos[i];
+
+        currentInput.value = currentValue;
+    };
 
     uploadTodos(user_todos);
 });
