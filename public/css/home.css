@@ -38,31 +38,48 @@ h1 {
 }
 
 .todo-list {
+    justify-content: center;
     position: relative;
     top: 75px;
 
     margin-left: auto;
     margin-right: auto;
 
-    width: 650px;
+    width: 800px;
 }
 
 .todo-list .todo {
     width: 650px;
+
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .todo .item {
     background-color: black;
     color: white;
     border-radius: 6px;
-    padding: 7px;
-    margin: 10px;
+    /* padding: 7px; */
 
-    display: block;
+    /* display: block; */
     width: 636px;
-    height: 20px;
+    height: 22px;
 
     font-size: 18px;
+}
+
+.todo {
+    display: flex;
+    flex-flow: row nowrap;
+
+    margin: 10px;
+    height: 25px;
+}
+
+.rightButtons {
+    justify-content: flex-end;
+    display: flex;
+    flex-flow: row nowrap;
 }
 
 .inputContainer {
@@ -100,10 +117,29 @@ h1 {
 
     border: none;
     border-radius: 6px;
-
-    cursor: pointer;
 }
 
-.addButton img {
+.imgButton {
+    height: 25px;
+    background-color: black;
+    border: none;
+
+    margin: 1px;
+}
+
+.updateButton {
+    width: 75px;
+    height: 25px;
+
+    position: relative;
+    top: 1px;
+
+    color: white;
+    background-color: black;
+
+    border: none;
+}
+
+button img {
     height: 100%;
 }

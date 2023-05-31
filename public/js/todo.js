@@ -41,7 +41,12 @@ const getUserTodos = async () => {
             
             const template = `
                 <div class="todo">
-                    <input id="${todo_id}" class="item">
+                    <input id="${todo_id}item" class="item">
+                    <div class="rightButtons">
+                        <button class="updateButton" type="submit" id="${todo_id}button">Update</button>
+                        <button class="imgButton" id="${todo_id}check"><img src="/img/check-solid-white.png" alt="mark as done"></button>
+                        <button class="imgButton" id="${todo_id}delete"><img src="/img/trash-solid.png" alt="delete"></button>
+                    </div>
                 </div>
             `;
 
@@ -73,7 +78,12 @@ newTodoForm.addEventListener('submit', e => {
 
     const template = `
         <div class="todo">
-            <input id="${todo_id}" class="item">
+            <input id="${todo_id}item" class="item">
+            <ul class="rightButtons">
+                <li><button type="submit" id="${todo_id}button">Update</button></li>
+                <li><button class="imgButton" id="${todo_id}check"><img src="/img/check-solid-white.png" alt="mark as done"></button></li>
+                <li><button class="imgButton" id="${todo_id}delete"><img src="/img/trash-solid.png" alt="delete"></button></li>
+            </ul>
         </div>
     `;
 
