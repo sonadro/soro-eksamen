@@ -1,6 +1,6 @@
 // DOM
 const newTodoForm = document.querySelector('.inputContainer');
-const todoContainer = document.querySelector('.todo-list');
+const updateForm = document.querySelector('.todo-list');
 
 // bruker todo
 let user_todos = [];
@@ -43,16 +43,16 @@ const getUserTodos = async () => {
                 <div class="todo">
                     <input id="${todo_id}item" class="item">
                     <div class="rightButtons">
-                        <button class="updateButton" type="submit" id="${todo_id}button">Update</button>
-                        <button class="imgButton" id="${todo_id}check"><img src="/img/check-solid-white.png" alt="mark as done"></button>
-                        <button class="imgButton" id="${todo_id}delete"><img src="/img/trash-solid.png" alt="delete"></button>
+                        <button onclick="updateTodos();" class="updateButton" id="${todo_id}button">Update</button>
+                        <button onclick="markTodo(${todo_id});" class="imgButton" id="${todo_id}check"><img src="/img/check-solid-white.png" alt="mark as done"></button>
+                        <button onclick="deleteTodo(${todo_id});" class="imgButton" id="${todo_id}delete"><img src="/img/trash-solid.png" alt="delete"></button>
                     </div>
                 </div>
             `;
 
             todo_id++;
     
-            todoContainer.innerHTML += template;
+            updateForm.innerHTML += template;
         });
     };
 
@@ -80,7 +80,7 @@ newTodoForm.addEventListener('submit', e => {
         <div class="todo">
             <input id="${todo_id}item" class="item">
             <ul class="rightButtons">
-                <li><button type="submit" id="${todo_id}button">Update</button></li>
+                <li><button id="${todo_id}button">Update</button></li>
                 <li><button class="imgButton" id="${todo_id}check"><img src="/img/check-solid-white.png" alt="mark as done"></button></li>
                 <li><button class="imgButton" id="${todo_id}delete"><img src="/img/trash-solid.png" alt="delete"></button></li>
             </ul>
@@ -89,7 +89,7 @@ newTodoForm.addEventListener('submit', e => {
 
     todo_id++;
 
-    todoContainer.innerHTML += template;
+    updateForm.innerHTML += template;
 
     // oppdater input-verdiene
     const allInputs = Array.from(document.querySelectorAll('.item'));
@@ -104,4 +104,30 @@ newTodoForm.addEventListener('submit', e => {
     uploadTodos(user_todos);
 });
 
+updateForm.addEventListener('submit', e => {
+    e.preventDefault();
+});
+
 getUserTodos();
+
+// update, mark as complete, and delete todos functions
+
+const updateTodos = () => {
+    let new_todos = [];
+
+    const newTodoFields = Array.from(document.querySelectorAll('.item'));
+
+    newTodoFields.forEach(field => {
+        new_todos.push(field.value);
+    });
+
+    uploadTodos(new_todos);
+};
+
+const markTodo = id => {
+    console.log('mark', id);
+};
+
+const deleteTodo = id => {
+    console.log('delete', id);
+};
