@@ -33,7 +33,7 @@ nav ul li {
 }
 
 .leftNav {
-    float: inline-start;
+    float: left;
     z-index: 105 !important;
 }
 
@@ -47,7 +47,7 @@ nav ul li {
 }
 
 .rightNav {
-    float: inline-end;
+    float: right;
     z-index: 105 !important;
 }
 
