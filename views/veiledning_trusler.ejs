@@ -1,0 +1,27 @@
+<%- include('partials/header') %>
+
+    <!-- css -->
+    <link rel="stylesheet" href="/css/veiledning_trusler.css">
+
+    <h1>Trusler denne serveren kan være utsatt for:</h1>
+
+    <ul class="centered">
+        <li>DoS og DDoS:</li>
+        <div class="ddos">
+            <p>Hvis en maskin sender mange forespørsler til denne serveren, så kan serveren bli treigere eller slutte å svare på forespørsler fra andre. Dette kalles for et Denial of Service- angrep. Hvis flere maskiner sender mange forespørsler til serveren, så er det et Distributed Denial of Service- angrep, som kan gjøre serveren enda treigere, eller få serveren til å slutte å svare helt.</p>
+            <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.tutorialspoint.com%2Fethical_hacking%2Fimages%2Fddos_system.jpg&f=1&nofb=1&ipt=f0d4caa5c3c0f569a3a400105c88a06b512d403c92d02d211405c04cf58ecdf4&ipo=images" alt="Bilde som demonstrerer hvordan en hacker kan ta kontroll over flere maskiner for å gjennomføre et Distributed Denial of Service- angrep mot en server.">
+        </div>
+
+        <li>Brute force:</li>
+        <div class="brute-force">
+            <p>Noen kan prøve å 'gjette' passordet til en admin- eller eier-bruker ved hjelp av brute force. Heldigvis så er ikke det et stort problem, fordi det eneste en admin-bruker gjør er å kunne se veilednings-sidene, og det eneste en eier-bruker kan gjøre er å endre hvem som er admin-bruker.<br><br>Det man bør gjøre for å sikre seg mot brute-force angrep er å implementere et system som begrenser antall innloggingsforsøk en bruker kan gjøre.</p>
+            <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse3.mm.bing.net%2Fth%3Fid%3DOIP.ZpqB6SGvd-LgpTicDY62qAHaFE%26pid%3DApi&f=1&ipt=a85f90ead48192edb14a31f27ae8259d98d6fbb109f3eb04637c61a40c566e4e&ipo=images" alt="Bilde av en liste med passord">
+        </div>
+
+        <li>Utdatert programvare:</li>
+        <div class="programvare">
+            <p>Vi har ikke tilgang til den nyeste versjonen av Node på Ubuntu-serverene, så vi må bruke en eldre versjon av Mongoose. Problemet med dette er at det kan være sikkerhetshull i de eldre versjonene.<br><br>Det man kan gjøre for å unngå disse sikkerhetshullene er å oppdatere programvaren på serveren, eller hvis det ikke er mulig, så kan man undersøke hvilken av de eldre versjonene av programvaren som er tryggest å bruke.</p>
+        </div>
+    </ul>
+
+<%- include('partials/footer') %>

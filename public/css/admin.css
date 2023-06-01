@@ -27,3 +27,14 @@
 label {
     font-weight: bold;
 }
+
+.flexbox {
+    display: flex;
+    width: 300px;
+    position: relative;
+    margin-right: auto;
+    margin-left: auto;
+
+    list-style-type: none;
+    text-align: center;
+}

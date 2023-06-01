@@ -49,8 +49,16 @@ module.exports.admin_ipplan_get = (req, res) => {
     res.render('ipplan', { title: 'IP-Plan' });
 };
 
-module.exports.admin_veileder_get = (req, res) => {
-    res.render('veileder', { title: 'Veileder' });
+module.exports.admin_veiledning_get = (req, res) => {
+    res.render('veiledning', { title: 'Veiledning' });
+};
+
+module.exports.admin_veiledning_trusler_get = (req, res) => {
+    res.render('veiledning_trusler', { title: 'Trusler' });
+};
+
+module.exports.admin_veiledning_autentisering_get = (req, res) => {
+    res.render('veiledning_autentisering', { title: 'Autentisering' });
 };
 
 module.exports.owner_get = (req, res) => {
